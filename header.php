@@ -6,11 +6,13 @@
 wp_enqueue_style ('bootstrap');
 
 wp_enqueue_script ('jquery');
+wp_enqueue_script ('coffeescript');
 wp_enqueue_script ('less');
 wp_enqueue_script ('typekit');
 
 wp_enqueue_style ('custom');
 wp_enqueue_script ('custom');
+#enqueue_coffeescript ('custom');
 
 wp_head ();
 ?>

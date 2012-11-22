@@ -27,8 +27,17 @@ wp_register_script ('typekit', 'http://use.typekit.net/qya1eek.js');
 /**
  * Custom CSS/JS
  */
-wp_register_style ('custom', get_template_directory_uri () . '/custom.css');
+wp_register_style ('custom', get_template_directory_uri () . '/custom.less');
 wp_register_script ('custom', get_template_directory_uri () . '/custom.js');
+
+/**
+ * Coffeescript
+ */
+function enqueue_coffeescript ($handle, $src_or_srcs, $deps = array (), $ver = false, $in_footer = false) {
+	global $wpcs;
+	$wpcs -> enqueue ($handle, $src_or_srcs, $deps, $ver, $in_footer);
+} // function enqueue_coffeescript ()
+wp_register_script ('coffeescript', get_template_directory_uri () . '/coffee-script/extras/coffee-script.js');
 
 /**
  * Less

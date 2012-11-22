@@ -1,0 +1,65 @@
+body {
+background-color: hsl(0, 0%, 60%);
+}
+
+.container > * {
+background-color: hsl(0, 0%, 100%);
+margin-top: 1em;
+padding: 1em;
+border: 1px solid hsl(0, 0%, 40%);
+position: relative;
+}
+
+a {
+text-decoration: none;
+	&:hover {
+	text-decoration: none;
+	}
+}
+
+.home {
+position: absolute;
+margin-left: -5em;
+background-color: hsl(0, 0%, 100%);
+border: 1px solid hsl(0, 0%, 40%);
+@pad: 3px;
+padding-left: @pad;
+padding-right: @pad;
+}
+
+ul.nav {
+padding: 0;
+	li {
+	list-style-type: none;
+	}
+}
+
+.exits {
+margin-top: 2em;
+border-bottom: 1px solid hsl(0, 10%, 40%);
+}
+
+/**
+ * Typography
+ */
+
+body {
+font-family: freight-sans-pro;
+}
+
+p {
+text-align: justify;
+}
+
+h1 {
+font-family: jaf-facitweb;
+}
+
+.exits {
+font-family: jaf-facitweb;
+font-weight: 400;
+}
+
+li {
+font-family: freight-sans-pro;
+}
