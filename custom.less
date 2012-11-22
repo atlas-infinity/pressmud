@@ -22,7 +22,6 @@ margin-top: 1em;
 margin-bottom: 1em;
 padding: 1em;
 border: 1px solid hsl(0, 0%, 40%);
-position: relative;
 .round (4px);
 }
 
@@ -32,10 +31,10 @@ position: relative;
 
 a {
 font-weight: 500;
-.out;
+.transOut;
 text-decoration: none;
 	&:hover {
-	.in;
+	.transIn;
 	color: inherit;
 	text-decoration: none;
 	}
@@ -87,11 +86,8 @@ text-align: right;
  * Typography
  */
 
-body {
-font-family: freight-sans-pro;
-}
-
 p {
+font-family: freight-sans-pro;
 text-align: justify;
 }
 
@@ -103,20 +99,19 @@ h1 {
 font-family: jaf-facitweb;
 }
 
-.exits {
-font-family: jaf-facitweb;
-font-weight: 400;
-}
-
 li {
 font-family: freight-sans-pro;
+}
+
+.tooltip {
+font-family: helvetica, arial, sans-serif;
 }
 
 /**
  * Transitions
  */
 
-.out {
+.transOut {
 -webkit-transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
    -moz-transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
     -ms-transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
@@ -129,7 +124,7 @@ font-family: freight-sans-pro;
         transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955); /* easeInOutQuad */
 }
 
-.in {
+.transIn {
 -webkit-transition: all 100ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
    -moz-transition: all 100ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
     -ms-transition: all 100ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 

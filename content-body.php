@@ -22,9 +22,10 @@ if (! empty ($custom)): ?>
 	<?php foreach ($custom as $name => $value):
 		if ($name [0] == '_') continue; // meta data like _edit_lock, _wp_page_template
 		$value = $value [0];
+		$title = get_the_title ($value);
 		$link = get_permalink ($value);
 		?>
-		<li><a href='<?= $link ?>'><?= $name ?></a></li>
+		<li><a rel='tooltip' title='<?= $title ?>' href='<?= $link ?>'><?= $name ?></a></li>
 	<?php endforeach ?>
 	</ul> <!-- / roomNavigation -->
 <?php endif ?>

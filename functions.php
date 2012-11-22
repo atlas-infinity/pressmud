@@ -19,6 +19,21 @@ add_filter ('next_post_rel_link', 'disablePostLinks');
  */
 wp_register_style ('bootstrap', get_template_directory_uri () . '/bootstrap/less/bootstrap.less');
 wp_register_style ('fontawesome', get_template_directory_uri () . '/Font-Awesome/css/font-awesome.css');
+wp_register_script ('bootstrap-tooltip', get_template_directory_uri () . '/bootstrap/js/bootstrap-tooltip.js');
+wp_register_script ('bootstrap-affix', get_template_directory_uri () . '/bootstrap/js/bootstrap-affix.js');
+wp_register_script ('bootstrap-alert', get_template_directory_uri () . '/bootstrap/js/bootstrap-alert.js');
+wp_register_script ('bootstrap-button', get_template_directory_uri () . '/bootstrap/js/bootstrap-button.js');
+wp_register_script ('bootstrap-carousel', get_template_directory_uri () . '/bootstrap/js/bootstrap-carousel.js');
+wp_register_script ('bootstrap-collapse', get_template_directory_uri () . '/bootstrap/js/bootstrap-collapse.js');
+wp_register_script ('bootstrap-dropdown', get_template_directory_uri () . '/bootstrap/js/bootstrap-dropdown.js');
+wp_register_script ('bootstrap-modal', get_template_directory_uri () . '/bootstrap/js/bootstrap-modal.js');
+wp_register_script ('bootstrap-popover', get_template_directory_uri () . '/bootstrap/js/bootstrap-popover.js');
+wp_register_script ('bootstrap-scrollspy', get_template_directory_uri () . '/bootstrap/js/bootstrap-scrollspy.js');
+wp_register_script ('bootstrap-tab', get_template_directory_uri () . '/bootstrap/js/bootstrap-tab.js');
+wp_register_script ('bootstrap-tooltip', get_template_directory_uri () . '/bootstrap/js/bootstrap-tooltip.js');
+wp_register_script ('bootstrap-transition', get_template_directory_uri () . '/bootstrap/js/bootstrap-transition.js');
+wp_register_script ('bootstrap-typeahead', get_template_directory_uri () . '/bootstrap/js/bootstrap-typeahead.js');
+
 
 /**
  * Typekit
