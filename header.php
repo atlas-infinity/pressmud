@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+<title>pressmud</title>
 <?php
 wp_enqueue_script ('typekit');
 wp_enqueue_script ('coffeescript');
