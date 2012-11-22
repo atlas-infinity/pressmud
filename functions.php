@@ -13,6 +13,8 @@ add_filter ('parent_post_rel_link', 'disablePostLinks');
 add_filter ('start_post_rel_link', 'disablePostLinks');
 add_filter ('previous_post_rel_link', 'disablePostLinks');
 add_filter ('next_post_rel_link', 'disablePostLinks');
+remove_filter ('the_content', 'wpautop');
+
 
 /**
  * Bootstrap

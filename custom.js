@@ -12,3 +12,6 @@ $ ->
 
 	$('[rel="tooltip"]').tooltip
 		placement: 'bottom'
+
+	$('[rel="popover"]').popover
+		placement: 'bottom'

@@ -4,7 +4,6 @@
 @paperBorder: hsl(0, 0%, 40%);
 @backdrop: hsl(207, 38%, 74%);
 @paper: hsl(0, 0%, 100%);
-@exit: hsl(0, 10%, 40%);
 @exitBorder: hsl(0, 10%, 80%);
 @exitDivider: hsl(0, 0%, 90%);
 @hoverBlankLink: hsl(0, 0%, 0%);
@@ -128,11 +127,19 @@ text-align: center;
 
 .exits {
 border-top: 1px dashed @exitBorder;
-color: @exit;
 padding-top: 0.825em;
 margin-top: 1.375em;
 margin-bottom: -1.5em;
 text-align: right;
+}
+
+.roomLocation {
+font-size: 12px;
+line-height: 2;
+font-weight: 400;
+position: absolute;
+right: 0;
+top: 0;
 }
 
 /**
@@ -148,11 +155,16 @@ strong {
 font-weight: 600;
 }
 
-h1 {
+.roomName {
 font-family: adelle;
 font-weight: 700;
 font-size: 24px;
 line-height: 1;
+position: relative;
+}
+
+.roomLocation {
+font-family: jaf-facitweb;
 }
 
 li {
@@ -203,4 +215,17 @@ font-weight: 400;
 /* Prevents long titles from wrapping */
 .tooltip-inner {
 max-width: none;
+white-space: nowrap;
+}
+
+/**
+ * Popover
+ */
+a[rel="popover"] {
+cursor: pointer;
+font-weight: 700;
+}
+
+.popover-title {
+display: none;
 }

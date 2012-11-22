@@ -7,6 +7,7 @@ wp_enqueue_script ('coffeescript');
 wp_enqueue_script ('jquery');
 wp_enqueue_style ('bootstrap');
 wp_enqueue_script ('bootstrap-tooltip');
+wp_enqueue_script ('bootstrap-popover');
 wp_enqueue_style ('fontawesome');
 wp_enqueue_script ('less');
 wp_enqueue_style ('custom');

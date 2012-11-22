@@ -1,13 +1,15 @@
+<div class='theContent'>
+	<?php the_content () ?>
+</div> <!-- /theContent -->
 <?php
-the_content ();
 $getCustom = get_post_custom ();
 $custom = array ();
 $order = array (
 	'Up' => 'icon-chevron-up',
-	'North' => 'icon-arrow-up',
-	'West' => 'icon-arrow-left',
-	'East' => 'icon-arrow-right',
-	'South' => 'icon-arrow-down',
+	'North' => 'icon-caret-up',
+	'West' => 'icon-caret-left',
+	'East' => 'icon-caret-right',
+	'South' => 'icon-caret-down',
 	'Down' => 'icon-chevron-down'
 );
 
