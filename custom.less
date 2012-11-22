@@ -8,6 +8,12 @@ border-radius: @radius;
 -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
 }
 
+.fade (@opacity: 1) {
+-webkit-opacity: @opacity;
+-moz-opacity: @opacity;
+opacity: @opacity;
+}
+
 /**
  * Containers
  */
@@ -30,7 +36,6 @@ border: 1px solid hsl(0, 0%, 40%);
  */
 
 a {
-font-weight: 500;
 .transOut;
 text-decoration: none;
 	&:hover {
@@ -40,13 +45,13 @@ text-decoration: none;
 	}
 }
 
+/* Links without a location are uncolored */
 a:not([href]) {
 color: hsl(0, 0%, 40%);
 	&:hover {
 	color: hsl(0, 0%, 0%);
 	}
 }
-
 
 i {
 position: relative;
@@ -55,15 +60,19 @@ position: relative;
 	}
 }
 
-
 /**
  * Specific
  */
 
 /* House icon */
 .home {
+color: black;
+.fade (0.1);
 position: absolute;
 margin-left: -3em;
+	&:hover {
+	.fade ();
+	}
 }
 
 /* Room navigation */
@@ -109,14 +118,18 @@ font-weight: 600;
 
 h1 {
 font-family: jaf-facitweb;
+font-weight: 700;
 }
 
 li {
-font-family: freight-sans-pro;
+font-size: 0.875em;
+font-family: jaf-facitweb;
+font-weight: 300;
 }
 
 .tooltip {
 font-family: helvetica, arial, sans-serif;
+font-weight: 400;
 }
 
 /**
@@ -152,7 +165,8 @@ font-family: helvetica, arial, sans-serif;
 /**
  * Tooltip
  */
+
+/* Prevents long titles from wrapping */
 .tooltip-inner {
 max-width: none;
 }
-
