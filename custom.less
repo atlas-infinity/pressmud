@@ -1,4 +1,16 @@
 /**
+ * Colors
+ */
+@paperBorder: hsl(0, 0%, 40%);
+@backdrop: hsl(207, 38%, 74%);
+@paper: hsl(0, 0%, 100%);
+@exit: hsl(0, 10%, 40%);
+@exitBorder: hsl(0, 10%, 80%);
+@exitDivider: hsl(0, 0%, 90%);
+@hoverBlankLink: hsl(0, 0%, 0%);
+@blankLink: hsl(0, 0%, 40%);
+
+/**
  * Mixins
  */
 .round (@radius: 2px) {
@@ -19,15 +31,15 @@ opacity: @opacity;
  */
 
 body {
-background-color: hsl(207, 38%, 74%);
+background-color: @backdrop;
 }
 
-.container > * {
-background-color: hsl(0, 0%, 100%);
+.container > div {
+background-color: @paper;
+border: 1px solid @paperBorder;
 margin-top: 1em;
 margin-bottom: 1em;
 padding: 1em;
-border: 1px solid hsl(0, 0%, 40%);
 .round (4px);
 }
 
@@ -40,23 +52,44 @@ a {
 text-decoration: none;
 	&:hover {
 	.transIn;
+	text-decoration: inherit;
 	color: inherit;
-	text-decoration: none;
-	}
-}
-
-/* Links without a location are uncolored */
-a:not([href]) {
-color: hsl(0, 0%, 40%);
-	&:hover {
-	color: hsl(0, 0%, 0%);
 	}
 }
 
 i {
+.transOut;
 position: relative;
+}
+
+/* Hovered anchors with locations have their icons moved */
+@distance: 1px;
+a[href]:hover i {
+.transIn;
+	&.direction-South,
+	&.direction-Down {
+		top: @distance;
+	}
+	&.direction-North,
+	&.direction-Up {
+		bottom: @distance;
+	}
+	&.direction-West {
+		right: @distance;
+	}
+	&.direction-East {
+		left: @distance;
+	}
+}
+
+/* Links without a location are uncolored and hover differently*/
+a:not([href]) {
+color: @blankLink;
 	&:hover {
-	top: 1px;
+	color: @hoverBlankLink;
+		i {
+		top: -1px; /* reverse, more subtle effect */
+		}
 	}
 }
 
@@ -64,39 +97,38 @@ position: relative;
  * Specific
  */
 
-/* House icon */
+/* Return to home icon */
 .home {
-color: black;
+color: black; /* because it'll use opacity */
 .fade (0.1);
 position: absolute;
-margin-left: -3em;
+margin-left: -3em; /* Pulls it outside of the frame */
 	&:hover {
 	.fade ();
 	}
 }
 
-/* Room navigation */
+/* List of exits */
 ul.roomNavigation {
 padding: 0;
 margin-bottom: 0;
 text-align: center;
 	li {
 	display: inline;
-	padding-right: 2px;
-	border-right: 1px solid hsl(0, 0%, 90%);
+	border-right: 1px solid @exitDivider;
 		&:last-of-type {
 		border-right: none;
 		}
 	}
 	li > a {
 	padding-left: 2px;
-	padding-right: 2px;
+	padding-right: 2px; /* puts the borders at the right distance */
 	}
 }
 
 .exits {
-border-top: 1px dashed hsl(0, 10%, 80%);
-color: hsl(0, 10%, 40%);
+border-top: 1px dashed @exitBorder;
+color: @exit;
 padding-top: 0.825em;
 margin-top: 1.375em;
 margin-bottom: -1.5em;
@@ -117,8 +149,10 @@ font-weight: 600;
 }
 
 h1 {
-font-family: jaf-facitweb;
+font-family: adelle;
 font-weight: 700;
+font-size: 24px;
+line-height: 1;
 }
 
 li {

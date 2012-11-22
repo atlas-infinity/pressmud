@@ -1,2 +1,1 @@
 Load coffeescript from functions/header
-Load font awesome

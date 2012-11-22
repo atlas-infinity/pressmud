@@ -34,7 +34,7 @@ if (! empty ($custom)): ?>
 				rel='tooltip'
 				title='<?= $title ?>'
 				href='<?= $link ?>'>
-				<i class='<?= $class ?>'></i>
+				<i class='<?= $class ?> direction-<?= $name ?>'></i>
 				<?= $name ?>
 			</a>
 		</li>
