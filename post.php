@@ -1,4 +1,4 @@
 <?php
-/*
-Template Name Posts: Snarfer
-*/
+/**
+ * Template Name Posts: Snarfer
+ */

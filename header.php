@@ -5,6 +5,7 @@
 wp_enqueue_script ('jquery');
 wp_enqueue_style ('bootstrap');
 wp_enqueue_style ('custom');
+wp_enqueue_script ('custom');
 wp_head ();
 ?>
 </head>
