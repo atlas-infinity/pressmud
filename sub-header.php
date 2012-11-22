@@ -1,3 +1,5 @@
 <div class='container'>
 <div class='span6 offset3'>
-<a href="<?= site_url () ?>" class="home">Home</a>
+<nav>
+<a href="<?= site_url () ?>" class="home"><i class="icon-home"></i></a>
+</nav>

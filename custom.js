@@ -1,5 +1,6 @@
 jQuery (function () {
 
-jQuery ('ul.nav').before ("<h3 class='exits'>Exits</h3>");
+var exits = "<p class='exits'><a title='Exits'><i class='icon-share'></i></p>"
+jQuery ('ul.nav').before (exits);
 
 });
