@@ -17,7 +17,7 @@ add_filter ('next_post_rel_link', 'disablePostLinks');
 /**
  * Bootstrap
  */
-wp_register_style ('bootstrap', get_template_directory_uri () . '/bootstrap/less/bootstrap.less');
+wp_register_style ('bootstrap', get_template_directory_uri () . '/bootstrap.less');
 wp_register_style ('fontawesome', get_template_directory_uri () . '/Font-Awesome/css/font-awesome.css');
 wp_register_script ('bootstrap-tooltip', get_template_directory_uri () . '/bootstrap/js/bootstrap-tooltip.js');
 wp_register_script ('bootstrap-affix', get_template_directory_uri () . '/bootstrap/js/bootstrap-affix.js');

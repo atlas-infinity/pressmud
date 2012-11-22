@@ -40,9 +40,21 @@ text-decoration: none;
 	}
 }
 
-i {
-color: black;
+a:not([href]) {
+color: hsl(0, 0%, 40%);
+	&:hover {
+	color: hsl(0, 0%, 0%);
+	}
 }
+
+
+i {
+position: relative;
+	&:hover {
+	top: 1px;
+	}
+}
+
 
 /**
  * Specific
