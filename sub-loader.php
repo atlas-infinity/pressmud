@@ -16,6 +16,6 @@ wp_enqueue_style ('custom');
 wp_head ();
 ?>
 <script type="text/javascript">try {Typekit.load ();} catch (e) {}</script>
-<script type="text/coffeescript" src="/mudpress/wp-content/themes/mudpress/custom.js"></script>
+<script type="text/coffeescript" src="/pressmud/wp-content/themes/custom/custom.js"></script>
 </head>
 <body>

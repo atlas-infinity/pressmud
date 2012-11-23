@@ -24,7 +24,7 @@ rewriteLinks = ->
 		placement: 'bottom'
 	$('[rel="popover"]').popover
 		placement: 'bottom'
-	$('a[href]:not(.home)').click (event) ->
+	$('a[href]:not(.fullLoad)').click (event) ->
 		event.preventDefault()
 		url = $(this).attr 'href'
 		url += '?ajax'
