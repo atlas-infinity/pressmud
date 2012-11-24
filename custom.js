@@ -24,12 +24,16 @@ rewriteLinks = ->
 		placement: 'bottom'
 	$('[rel="popover"]').popover
 		placement: 'bottom'
-	$('a[href]:not(.fullLoad)').click (event) ->
+	$('.ajaxLoad').click (event) ->
 		event.preventDefault()
 		url = $(this).attr 'href'
 		url += '?ajax'
 		$('.theContent').load url, ->
 			loadNav()
+	$('.modalLoad').click (event) ->
+		target = $(this).attr 'href'
+		console.log 'target:', target
+		$(target).modal()
 
 $ = jQuery
 $ ->

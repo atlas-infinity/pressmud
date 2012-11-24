@@ -30,6 +30,7 @@ if (! empty ($custom)): ?>
 		?>
 		<li>
 			<a
+				class='ajaxLoad'
 				rel='tooltip'
 				title='<?= $title ?>'
 				href='<?= $link ?>'>
