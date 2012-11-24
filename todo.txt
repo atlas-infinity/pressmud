@@ -1,1 +1,0 @@
-Load coffeescript from functions/header
