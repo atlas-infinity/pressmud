@@ -1,3 +1,9 @@
+<?php
+/**
+ * Beginning of HTML document
+ * and stylesheet/script loads
+ */
+?>
 <!doctype html>
 <html>
 <head>
@@ -13,10 +19,10 @@ wp_enqueue_script ('bootstrap-modal');
 wp_enqueue_style ('fontawesome');
 wp_enqueue_script ('less');
 wp_enqueue_style ('custom');
-#wp_enqueue_script ('custom'); // inline link for now
+#wp_enqueue_script ('custom'); // WP won't embed coffeescript. Embedded manually below.
 wp_head ();
 ?>
 <script type="text/javascript">try {Typekit.load ();} catch (e) {}</script>
-<script type="text/coffeescript" src="/pressmud/wp-content/themes/custom/custom.js"></script>
+<script type="text/coffeescript" src="<?= bloginfo ('siteurl') ?>/wp-content/themes/custom/custom.js"></script>
 </head>
 <body>

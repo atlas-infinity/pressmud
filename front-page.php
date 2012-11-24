@@ -1,7 +1,10 @@
 <?php
-get_header ();
-get_template_part ('content', 'header');
+/**
+ * A link to the entrance
+ * posts can't be set as static front pages
+ */
 ?>
+<?php get_header () ?>
 <div class='welcome'>
 	<p>
 		<a href="/pressmud/room/entrance" class="fullLoad">
@@ -10,5 +13,4 @@ get_template_part ('content', 'header');
 		</a>
 	</p>
 </div> <!-- /welcome -->
-<?php
-get_footer ();
+<?php get_footer () ?>

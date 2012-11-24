@@ -1,4 +1,7 @@
 <?php
+/**
+ * Remove default <head> junk
+ */
 remove_action ('wp_head', 'rsd_link');
 remove_action ('wp_head', 'wlwmanifest_link');
 remove_action ('wp_head', 'wp_generator');
@@ -6,18 +9,26 @@ remove_action ('wp_head', 'feed_links_extra', 3);
 remove_action ('wp_head', 'feed_links', 2);
 remove_action ('wp_head', 'wp_shortlink_wp_head', 10, 0 );
 remove_action ('wp_head', 'rel_canonical');
-add_filter ('show_admin_bar', '__return_false');
 function disablePostLinks () { return false; }
 add_filter ('index_rel_link', 'disablePostLinks');
 add_filter ('parent_post_rel_link', 'disablePostLinks');
 add_filter ('start_post_rel_link', 'disablePostLinks');
 add_filter ('previous_post_rel_link', 'disablePostLinks');
 add_filter ('next_post_rel_link', 'disablePostLinks');
-remove_filter ('the_content', 'wpautop');
+
+/**
+ * Disable admin bar
+ */
+add_filter ('show_admin_bar', '__return_false');
 
 
 /**
- * Bootstrap
+ * Remove auto-p
+ */
+remove_filter ('the_content', 'wpautop');
+
+/**
+ * Bootstrap styles and scripts
  */
 wp_register_style ('bootstrap', get_template_directory_uri () . '/bootstrap.less');
 wp_register_style ('fontawesome', get_template_directory_uri () . '/Font-Awesome/css/font-awesome.css');
@@ -36,7 +47,6 @@ wp_register_script ('bootstrap-tooltip', get_template_directory_uri () . '/boots
 wp_register_script ('bootstrap-transition', get_template_directory_uri () . '/bootstrap/js/bootstrap-transition.js');
 wp_register_script ('bootstrap-typeahead', get_template_directory_uri () . '/bootstrap/js/bootstrap-typeahead.js');
 
-
 /**
  * Typekit
  */
@@ -52,6 +62,8 @@ wp_register_style ('custom', get_template_directory_uri () . '/custom.less');
  * Coffeescript
  */
 /*
+ * Doesn't work:
+ *
 function enqueue_coffeescript ($handle, $src_or_srcs, $deps = array (), $ver = false, $in_footer = false) {
 	global $wpcs;
 	$wpcs -> enqueue ($handle, $src_or_srcs, $deps, $ver, $in_footer);
@@ -61,6 +73,8 @@ wp_register_script ('coffeescript', get_template_directory_uri () . '/coffee-scr
 
 /**
  * Less
+ *
+ * Modifies enqueue style to change the rel attribute
  */
 function enqueue_less_styles ($tag, $handle) {
 	global $wp_styles;

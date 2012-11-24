@@ -1,3 +1,10 @@
+<?php
+/**
+ * Prints the post title
+ * the ID number of the room
+ * and the content of the post
+ */
+?>
 <h1 class='roomName'>
 	<?php the_title () ?>
 	<small class='roomLocation'>

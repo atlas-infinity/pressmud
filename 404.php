@@ -1,6 +1,8 @@
 <?php
+/**
+ * Prints 404 and a link back to the front page
+ */
 get_header ();
-get_template_part ('content', 'header');
 ?>
 <div class='err404'>
 <h1>404</h1>

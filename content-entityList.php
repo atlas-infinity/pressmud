@@ -1,4 +1,7 @@
 <?php
+/**
+ * Gets entities with a location set to this room
+ */
 $id = get_the_ID ();
 $sql = "
 	select
@@ -10,9 +13,9 @@ $sql = "
 	where meta.meta_key = 'Location'
 	and meta.meta_value = $id;
 ";
-// prepare statement
+// todo: prepare statement
 $results = $wpdb -> get_results ($sql, OBJECT);
-// if num rows
+// todo: check if num rows > 0
 $i = 0;
 if (! empty ($results)): ?>
 	<ul class='entities'>

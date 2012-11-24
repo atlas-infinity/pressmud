@@ -1,4 +1,7 @@
 <?php
+/**
+ * Print list of exits based on WP custom fields set in post
+ */
 $getCustom = get_post_custom ();
 $custom = array ();
 $order = array (
