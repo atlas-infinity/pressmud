@@ -23,6 +23,6 @@ wp_enqueue_style ('custom');
 wp_head ();
 ?>
 <script type="text/javascript">try {Typekit.load ();} catch (e) {}</script>
-<script type="text/coffeescript" src="<?= bloginfo ('siteurl') ?>/wp-content/themes/custom/custom.js"></script>
+<script type="text/coffeescript" src="<?= bloginfo ('siteurl') ?>/wp-content/themes/custom/custom.coffee"></script>
 </head>
 <body>
