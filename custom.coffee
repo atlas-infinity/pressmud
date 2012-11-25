@@ -32,8 +32,13 @@ prepareAjax = ->
 		$('.theContent').load url, ->
 			loadNav()
 	$('.subContainer .modalLoad').click (event) ->
-		target = $(this).attr 'href'
-		$(target).modal()
+		event.preventDefault()
+		url = $(this).attr 'href'
+		url += '?ajax'
+		id = $(this).attr 'id'
+		target = $('#' + id.replace /entity-/, 'entityHolder-')
+		target.load url
+		target.modal()
 
 $ = jQuery
 $ ->

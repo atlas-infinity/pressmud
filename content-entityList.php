@@ -19,11 +19,14 @@ $results = $wpdb -> get_results ($sql, OBJECT);
 $i = 0;
 if (! empty ($results)): ?>
 	<ul class='entities'>
-	<?php foreach ($results as $entity): ?>
+	<?php foreach ($results as $entity):
+		$link = get_permalink ($entity -> post_id);
+		?>
 		<li>
-			<a class='entity modalLoad' href='#modal-<?= $i ?>'>
+			<a id="entity-<?= $i ?>" class='entity modalLoad' href='<?= $link ?>'>
 				<?= $entity -> post_title ?>
 			</a>
+			<div id="entityHolder-<?= $i ?>" class="entityHolder modal hide fade"></div>
 		</li>
 	<?php endforeach ?>
 	</ul>
