@@ -91,3 +91,98 @@ function enqueue_less_styles ($tag, $handle) {
 } // function enqueue_less_styles
 add_filter( 'style_loader_tag', 'enqueue_less_styles', 5, 2);
 wp_register_script ('less', get_template_directory_uri () . '/less.js/dist/less-1.3.1.min.js');
+
+/**
+ * Custom post type: entities
+ */
+register_post_type (
+	'entities',
+	array (
+		'label' => 'Entities',
+		'description' => '',
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'rewrite' => array ('slug' => ''),
+		'query_var' => true,
+		'exclude_from_search' => false,
+		'supports' => array (
+			'title',
+			'editor',
+			'excerpt',
+			'trackbacks',
+			'custom-fields',
+			'comments',
+			'revisions',
+			'thumbnail',
+			'author',
+			'page-attributes',
+		),
+		'labels' => array (
+			'name' => 'Entities',
+			'singular_name' => 'Entity',
+			'menu_name' => 'Entities',
+			'add_new' => 'Add Entity',
+			'add_new_item' => 'Add New Entity',
+			'edit' => 'Edit',
+			'edit_item' => 'Edit Entity',
+			'new_item' => 'New Entity',
+			'view' => 'View Entity',
+			'view_item' => 'View Entity',
+			'search_items' => 'Search Entities',
+			'not_found' => 'No Entities Found',
+			'not_found_in_trash' => 'No Entities Found in Trash',
+			'parent' => 'Parent Entity',
+		),
+	)
+);
+
+
+/**
+ * Custom post type: rooms
+ */
+register_post_type (
+	'rooms',
+	array (
+		'label' => 'Rooms',
+		'description' => '',
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'rewrite' => array ('slug' => ''),
+		'query_var' => true,
+		'exclude_from_search' => false,
+		'supports' => array (
+			'title',
+			'editor',
+			'excerpt',
+			'trackbacks',
+			'custom-fields',
+			'comments',
+			'revisions',
+			'thumbnail',
+			'author',
+			'page-attributes',
+		),
+		'labels' => array (
+			'name' => 'Rooms',
+			'singular_name' => 'Room',
+			'menu_name' => 'Rooms',
+			'add_new' => 'Add Room',
+			'add_new_item' => 'Add New Room',
+			'edit' => 'Edit',
+			'edit_item' => 'Edit Room',
+			'new_item' => 'New Room',
+			'view' => 'View Room',
+			'view_item' => 'View Room',
+			'search_items' => 'Search Rooms',
+			'not_found' => 'No Rooms Found',
+			'not_found_in_trash' => 'No Rooms Found in Trash',
+			'parent' => 'Parent Room',
+		),
+	)
+);
