@@ -22,7 +22,7 @@ wp_enqueue_style ('custom');
 #wp_enqueue_script ('custom'); // WP won't embed coffeescript. Embedded manually below.
 wp_head ();
 ?>
-<script type="text/javascript">try {Typekit.load ();} catch (e) {}</script>
-<script type="text/coffeescript" src="<?= bloginfo ('siteurl') ?>/wp-content/themes/custom/custom.coffee"></script>
+<script type='text/javascript'>try {Typekit.load ();} catch (e) {}</script>
+<script type='text/coffeescript' src='<?= bloginfo ('siteurl') ?>/wp-content/themes/custom/custom.coffee'></script>
 </head>
 <body>

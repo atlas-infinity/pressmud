@@ -21,7 +21,7 @@ if (! empty ($results)): ?>
 	<ul class='entities'>
 	<?php foreach ($results as $entity): ?>
 		<li>
-			<a class='entity modalLoad' href="#modal-<?= $i ?>">
+			<a class='entity modalLoad' href='#modal-<?= $i ?>'>
 				<?= $entity -> post_title ?>
 			</a>
 		</li>

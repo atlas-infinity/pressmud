@@ -7,7 +7,7 @@
 <?php get_header () ?>
 <div class='welcome'>
 	<p>
-		<a href="/pressmud/room/entrance" class="fullLoad">
+		<a href='/pressmud/room/entrance'>
 			<i class='icon-magic'></i>
 			Enter pressmud
 		</a>
