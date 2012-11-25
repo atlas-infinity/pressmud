@@ -53,10 +53,10 @@ wp_register_script ('bootstrap-typeahead', get_template_directory_uri () . '/boo
 wp_register_script ('typekit', 'http://use.typekit.net/qya1eek.js');
 
 /**
- * Custom CSS/JS
+ * Custom Less/Coffeescript
  */
 wp_register_style ('custom', get_template_directory_uri () . '/custom.less');
-/* wp_register_script ('custom', get_template_directory_uri () . '/custom.js'); */
+/* wp_register_script ('custom', get_template_directory_uri () . '/custom.coffee'); */
 
 /**
  * Coffeescript

@@ -19,6 +19,7 @@ loadNav = ->
 # Rewrites the links to use ajax loads
 # Needs to be separated because it needs to run in order
 ##
+
 rewriteLinks = ->
 	$('[rel="tooltip"]').tooltip
 		placement: 'bottom'
