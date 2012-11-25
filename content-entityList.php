@@ -28,8 +28,9 @@ if (! empty ($results)): ?>
 			</a>
 			<div id="entityHolder-<?= $i ?>" class="entityHolder modal hide fade"></div>
 		</li>
-	<?php endforeach ?>
+	<?php
+	$i ++;
+	endforeach ?>
 	</ul>
 <?php
-$i ++;
 endif ?>
