@@ -4,6 +4,6 @@
  */
 ?>
 <?php get_template_part ('sub', 'footer') ?>
-<?php include_once ('analytics.php') ?>
+<?php include_once ('analytics.js') ?>
 </body>
 </html>
