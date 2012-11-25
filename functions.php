@@ -21,7 +21,6 @@ add_filter ('next_post_rel_link', 'disablePostLinks');
  */
 add_filter ('show_admin_bar', '__return_false');
 
-
 /**
  * Remove auto-p
  */
@@ -53,28 +52,16 @@ wp_register_script ('bootstrap-typeahead', get_template_directory_uri () . '/boo
 wp_register_script ('typekit', 'http://use.typekit.net/qya1eek.js');
 
 /**
- * Google analytics
- */
-wp_register_script ('analytics', get_template_directory_uri () . '/analytics.js');
-
-/**
- * Custom Less/Coffeescript
- */
-wp_register_style ('custom', get_template_directory_uri () . '/custom.less');
-/* wp_register_script ('custom', get_template_directory_uri () . '/custom.coffee'); */
-
-/**
  * Coffeescript
- */
-/*
- * Doesn't work:
+ * (doesn't work)
  *
 function enqueue_coffeescript ($handle, $src_or_srcs, $deps = array (), $ver = false, $in_footer = false) {
 	global $wpcs;
 	$wpcs -> enqueue ($handle, $src_or_srcs, $deps, $ver, $in_footer);
-} // function enqueue_coffeescript ()
+} // function enqueue_coffeescript
 */
 wp_register_script ('coffeescript', get_template_directory_uri () . '/coffee-script/extras/coffee-script.js');
+/* wp_register_script ('custom', get_template_directory_uri () . '/custom.coffee'); */
 
 /**
  * Less
@@ -96,6 +83,7 @@ function enqueue_less_styles ($tag, $handle) {
 } // function enqueue_less_styles
 add_filter( 'style_loader_tag', 'enqueue_less_styles', 5, 2);
 wp_register_script ('less', get_template_directory_uri () . '/less.js/dist/less-1.3.1.min.js');
+wp_register_style ('custom', get_template_directory_uri () . '/custom.less');
 
 /**
  * Custom post type: entities
