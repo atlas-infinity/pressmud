@@ -1,6 +1,6 @@
 <?php
 /**
- * Template called for entity ajax loads
+ * Template: entity ajax loads
  */
 ?>
 <div id='modal-<?= $i ?>' class='modal hide fade'>

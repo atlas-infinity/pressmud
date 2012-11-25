@@ -13,7 +13,6 @@ loadNav = ->
 		"
 	$('ul.roomNavigation').before exits
 	prepareAjax()
-	console.log 'rewrite links'
 
 ##
 # Activates tooltip/popover for the new loaded data
@@ -26,12 +25,15 @@ prepareAjax = ->
 		placement: 'bottom'
 	$("[rel='popover']").popover
 		placement: 'bottom'
-	$('.ajaxLoad').click (event) ->
+	$('.subContainer .ajaxLoad').click (event) ->
 		event.preventDefault()
 		url = $(this).attr 'href'
 		url += '?ajax'
 		$('.theContent').load url, ->
 			loadNav()
+	$('.subContainer .modalLoad').click (event) ->
+		target = $(this).attr 'href'
+		$(target).modal()
 
 $ = jQuery
 $ ->
