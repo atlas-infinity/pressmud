@@ -6,8 +6,10 @@ the_post ();
 $custom = get_post_custom ();
 $location = $custom ['Location'] [0];
 $program = $custom ['Program'] [0];
-require_once ("class/Entity/$program.class.php");
-$entity = new Entity ($location);
+$class = ucfirst (preg_replace ('/^Entity\//', '', $program));
+require_once ("class/$program.class.php");
+$entity = new $class ($location);
+$commands = $entity -> commands ();
 ?>
 <div class='modal-header'>
 	<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
@@ -17,6 +19,14 @@ $entity = new Entity ($location);
 	<?php the_content () ?>
 </div>
 <div class='modal-footer'>
-<p>Location: <?= $location ?></p>
-<p>Program: <?= $program ?></p>
+	<p>Location: <?= $location ?></p>
+	<p>Program: <?= $program ?></p>
+	<?php if (! empty ($commands)): ?>
+		<p>Available commands:</p>
+		<ul class="entityCommands">
+		<?php foreach ($commands as $command): ?>
+			<li><a href="#"><?= $command ?></a></li>
+		<?php endforeach ?>
+		</ul>
+	<?php endif ?>
 </div>
