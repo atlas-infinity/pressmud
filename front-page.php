@@ -5,12 +5,12 @@
  */
 ?>
 <?php get_header () ?>
-<div class='welcome'>
-	<p>
-		<a href='/pressmud/room/entrance'>
+<div class='theContent'>
+	<p class='welcome'>
+		<a class='ajaxLoad' href='/pressmud/room/entrance'>
 			<i class='icon-magic'></i>
 			Enter pressmud
 		</a>
 	</p>
-</div> <!-- /welcome -->
+</div> <!-- /theContent /welcome -->
 <?php get_footer () ?>
