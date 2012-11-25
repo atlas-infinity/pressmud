@@ -1,6 +1,6 @@
 ##
 # Adds a header to roomNavigation
-# Calls rewriteLinks ()
+# Calls prepareAjax ()
 ##
 
 loadNav = ->
@@ -12,7 +12,8 @@ loadNav = ->
 		</aside>
 		"
 	$('ul.roomNavigation').before exits
-	rewriteLinks()
+	prepareAjax()
+	console.log 'rewrite links'
 
 ##
 # Activates tooltip/popover for the new loaded data
@@ -20,10 +21,10 @@ loadNav = ->
 # Needs to be separated because it needs to run in order
 ##
 
-rewriteLinks = ->
-	$('[rel="tooltip"]').tooltip
+prepareAjax = ->
+	$("[rel='tooltip']").tooltip
 		placement: 'bottom'
-	$('[rel="popover"]').popover
+	$("[rel='popover']").popover
 		placement: 'bottom'
 	$('.ajaxLoad').click (event) ->
 		event.preventDefault()
@@ -31,10 +32,6 @@ rewriteLinks = ->
 		url += '?ajax'
 		$('.theContent').load url, ->
 			loadNav()
-	$('.modalLoad').click (event) ->
-		target = $(this).attr 'href'
-		console.log 'target:', target
-		$(target).modal()
 
 $ = jQuery
 $ ->
