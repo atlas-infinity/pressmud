@@ -96,7 +96,7 @@ wp_register_script ('less', get_template_directory_uri () . '/less.js/dist/less-
  * Custom post type: entities
  */
 register_post_type (
-	'entities',
+	'entity',
 	array (
 		'label' => 'Entities',
 		'description' => '',
@@ -144,7 +144,7 @@ register_post_type (
  * Custom post type: rooms
  */
 register_post_type (
-	'rooms',
+	'room',
 	array (
 		'label' => 'Rooms',
 		'description' => '',
