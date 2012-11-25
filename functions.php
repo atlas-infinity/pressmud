@@ -53,6 +53,11 @@ wp_register_script ('bootstrap-typeahead', get_template_directory_uri () . '/boo
 wp_register_script ('typekit', 'http://use.typekit.net/qya1eek.js');
 
 /**
+ * Google analytics
+ */
+wp_register_script ('analytics', get_template_directory_uri () . '/analytics.js');
+
+/**
  * Custom Less/Coffeescript
  */
 wp_register_style ('custom', get_template_directory_uri () . '/custom.less');
