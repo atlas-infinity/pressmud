@@ -12,5 +12,6 @@
 			Enter pressmud
 		</a>
 	</p>
+	<p class='welcome'><a href="https://github.com/Wideshanks/pressmud">Github</a></p>
 </div> <!-- /theContent /welcome -->
 <?php get_footer () ?>
