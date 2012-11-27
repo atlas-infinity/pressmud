@@ -21,16 +21,17 @@ $class = ucfirst (preg_replace ('/^Entity\//', '', $program));
 require_once ("class/$program.class.php");
 $entity = new $class ($location);
 
-
 /**
  * If POST is set, then a command has been pressed
  */
 if (! empty ($_POST)):
 	$command = $_POST ['command'];
+	$response = $entity -> $command ();
 	?>
-	[<?= get_class ($entity) ?>]
-	[<?= $command ?>]
-	[<?= $entity -> $command () ?>]
+		<dl>
+			<dt class='action'>You <?= $command ?>.</dt>
+			<dd class='response'>The entity <?= $response ?>.</dd>
+		</dl>
 	<?php
 	return;
 
@@ -47,17 +48,20 @@ else:
 	</div>
 	<div class='modal-body'>
 		<?php the_content () ?>
-	</div>
-	<div class='modal-footer'>
 		<p>Location: <?= $location ?></p>
 		<p>Program: <?= $program ?></p>
 		<?php if (! empty ($commands)): ?>
 			<p>Available commands:</p>
-			<ul class="entityCommands">
+			<ul class='entityCommands'>
 			<?php foreach ($commands as $command): ?>
-				<li><a href="#"><?= $command ?></a></li>
+				<li>
+					<a href='<?= get_permalink () ?>' data-target='writeArea' class='ajaxPost'><?= $command ?></a>
+					<input name='command' type='hidden' value='<?= $command ?>'>
+				</li>
 			<?php endforeach ?>
 			</ul>
 		<?php endif ?>
+	</div>
+	<div class='modal-footer writeArea'>
 	</div>
 <?php endif ?>

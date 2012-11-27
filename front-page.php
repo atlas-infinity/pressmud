@@ -6,12 +6,13 @@
 ?>
 <?php get_header () ?>
 <div class='theContent'>
-	<p class='welcome'>
-		<a class='ajaxLoad' href='/pressmud/room/entrance'>
-			<i class='icon-magic'></i>
-			Enter pressmud
-		</a>
-	</p>
-	<p class='welcome'><a href="https://github.com/Wideshanks/pressmud">Github</a></p>
-</div> <!-- /theContent /welcome -->
+	<div class='welcome'>
+		<h1 class='title'>
+			<a class='ajaxLoad' href='/pressmud/room/entrance'>
+				pressmud
+			</a>
+		</h1>
+		<p>Wordpress as MUD. (<a href="https://github.com/Wideshanks/pressmud">Github</a>)</p>
+	</div> <!-- /welcome -->
+</div> <!-- /theContent -->
 <?php get_footer () ?>
