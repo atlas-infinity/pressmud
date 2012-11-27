@@ -1,10 +1,12 @@
 <?php
 class Entity {
 
+	#public $program = get_class ($this);
+
 	/**
 	 * Sets the post id the entity resides in
 	 */
-	protected $location;
+	public $location;
 	public function __construct ($location) {
 		$this -> location = $location;
 	} // construct ()

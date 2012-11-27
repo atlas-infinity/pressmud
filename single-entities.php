@@ -5,21 +5,11 @@
  * Commands are sent via post
  */
 
+/**
+ * Get the entity
+ */
 the_post ();
-
-/**
- * Get the location and program name
- */
-$custom = get_post_custom ();
-$location = $custom ['Location'] [0];
-$program = $custom ['Program'] [0];
-$class = ucfirst (preg_replace ('/^Entity\//', '', $program));
-
-/**
- * Create a new object and get the commands
- */
-require_once ("class/$program.class.php");
-$entity = new $class ($location);
+$entity = getObject (get_post_custom (), 'Entity');
 
 /**
  * If POST is set, then a command has been pressed
@@ -29,8 +19,8 @@ if (! empty ($_POST)):
 	$response = $entity -> $command ();
 	?>
 		<dl>
-			<dt class='action'>You <?= $command ?>.</dt>
-			<dd class='response'>The entity <?= $response ?>.</dd>
+			<dt class='action'><strong>[You]</strong>: <?= $command ?>.</dt>
+			<dd class='response'><strong>[Entity]</strong>: <?= $response ?>.</dd>
 		</dl>
 	<?php
 	return;
@@ -48,8 +38,8 @@ else:
 	</div>
 	<div class='modal-body'>
 		<?php the_content () ?>
-		<p>Location: <?= $location ?></p>
-		<p>Program: <?= $program ?></p>
+		<p>Location: <?= $entity -> location ?></p>
+		<p>Program: <?= $entity -> program ?></p>
 		<?php if (! empty ($commands)): ?>
 			<p>Available commands:</p>
 			<ul class='entityCommands'>

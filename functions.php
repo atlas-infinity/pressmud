@@ -179,3 +179,15 @@ register_post_type (
 		),
 	)
 );
+
+/**
+ * Figure out which object to instantiate based on post's custom data
+ */
+function getObject ($customData, $type) {
+	$location = $customData ['Location'] [0];
+	$program = $customData ['Program'] [0];
+	$class = ucfirst (preg_replace ("/^$type\//", '', $program));
+	require_once ("class/$program.class.php");
+	$entity = new $class ($location);
+	return $entity;
+} // getObject ()
